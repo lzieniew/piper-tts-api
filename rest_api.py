@@ -22,7 +22,7 @@ app.add_middleware(
 
 def generate_text(sentence: str):
     # Specify the absolute path for the welcome.wav file
-    wav_path = '/usr/src/app/welcome.wav'
+    wav_path = '/usr/src/app/output.wav'
 
     # Use a temporary file to hold the sentence
     with open('/tmp/sentence.txt', 'w') as file:
@@ -50,6 +50,7 @@ def generate_text(sentence: str):
 
     # Return the audio data as a streaming response
     return buffer
+
 
 class TTSRequest(BaseModel):
     sentence: str
